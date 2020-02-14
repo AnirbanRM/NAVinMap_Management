@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arm.test.Controller">
+   <children>
+      <TabPane fx:id="floor_tab" layoutY="71.0" prefHeight="25.0" prefWidth="1066.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="71.0" />
+      <ScrollPane layoutY="96.0" prefHeight="605.0" prefWidth="1066.0" style="-fx-border-width: 0;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="96.0">
+         <content>
+            <Canvas fx:id="map" height="850.0" onMouseClicked="#map_clicked" onMouseDragged="#map_dragged" onMouseReleased="#mouse_released" width="1181.0" />
+         </content>
+      </ScrollPane>
+      <AnchorPane fx:id="control_pane" disable="true" layoutX="1065.0" layoutY="25.0" prefHeight="675.0" prefWidth="135.0" style="-fx-background-color: #cccccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Button fx:id="add_node" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#add_node_clicked" prefHeight="25.0" prefWidth="109.0" text="Add Node" />
+            <Button fx:id="displace_node" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#displace_node_clicked" prefHeight="25.0" prefWidth="109.0" text="Displace Node" />
+            <Button fx:id="add_store" layoutX="14.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#add_store_clicked" prefHeight="25.0" prefWidth="109.0" text="Add Shop" />
+            <Button fx:id="remove_node" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#remove_node_clicked" prefHeight="25.0" prefWidth="109.0" text="Remove Node" />
+            <Button layoutX="14.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#displace_store_clicked" prefHeight="25.0" prefWidth="109.0" text="Displace Shop" />
+            <Button layoutX="14.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#remove_shop_clicked" prefHeight="25.0" prefWidth="109.0" text="Remove Shop" />
+            <Button layoutX="14.0" layoutY="170.0" mnemonicParsing="false" onMouseClicked="#view_shop_clicked" prefHeight="25.0" prefWidth="109.0" text="View Shop" />
+            <Button layoutX="14.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#join_node_clicked" prefHeight="25.0" prefWidth="109.0" text="Join Nodes" />
+            <Button layoutX="14.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#trim_path_clicked" prefHeight="25.0" prefWidth="109.0" text="Trim Path" />
+            <Button layoutX="14.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#map_shop" prefHeight="25.0" prefWidth="109.0" text="Map shop" />
+            <Button layoutX="14.0" layoutY="384.0" mnemonicParsing="false" onMouseClicked="#Unmap_shop" prefHeight="25.0" prefWidth="109.0" text="Unmap Shop" />
+             <TextField fx:id="floor_id" layoutX="13.0" layoutY="472.0" prefHeight="25.0" prefWidth="109.0" />
+             <Label layoutX="17.0" layoutY="516.0" text="Background Map" />
+             <Button fx:id="set_bk" layoutX="15.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#set_clicked" text="Set" />
+             <Label layoutX="17.0" layoutY="453.0" text="Floor ID" />
+             <Button fx:id="remove_bk" layoutX="62.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#remove_clicked" text="Remove" />
+         </children>
+      </AnchorPane>
+      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#new_mall" text="New Mall" />
+                  <MenuItem mnemonicParsing="false" onAction="#new_floor" text="New Floor" />
+                  <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#SaveFile" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#SaveAsFile" text="Save As" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="mall_name" layoutX="8.0" layoutY="34.0" prefHeight="31.0" prefWidth="465.0" promptText="Mall Name">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+   </children>
+</AnchorPane>
